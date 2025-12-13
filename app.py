@@ -1593,4 +1593,5 @@ if __name__ == "__main__":
     logger.info(f"Parallel Workers: {MAX_WORKERS}")
     logger.info("=" * 60)
     
-    app.run(host="127.0.0.1", port=5000, debug=False, threaded=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
